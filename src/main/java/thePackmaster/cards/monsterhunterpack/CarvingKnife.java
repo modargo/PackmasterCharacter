@@ -77,7 +77,7 @@ public class CarvingKnife extends AbstractMonsterHunterCard {
         for (AbstractMonster m : Wiz.getEnemies()) {
             if (!m.isDeadOrEscaped()) {
                 if ((m.type == AbstractMonster.EnemyType.ELITE || m.type == AbstractMonster.EnemyType.BOSS) || isSlimebossOffspring(m.id)) {
-                    if (!cardToPreview.contains(getMonsterWeapon(m.id))) {
+                    if (cardToPreview.stream().noneMatch(c -> c.cardID.equals(getMonsterWeapon(m.id).cardID))) {
                         cardToPreview.add(getMonsterWeapon(m.id));
                     }
                 }
