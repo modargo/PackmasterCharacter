@@ -119,7 +119,7 @@ public class CarvingKnife extends AbstractMonsterHunterCard {
     }
 
     public static AbstractCard getMonsterWeapon(String id) {
-        return CardLibrary.getCard(monsterWeapons.getOrDefault(id, Hyperbeam.ID));
+        return CardLibrary.getCard(monsterWeapons.getOrDefault(id, Hyperbeam.ID)).makeCopy();
     }
 
     public static boolean isSlimebossOffspring(String monsterID) {
